@@ -14,10 +14,10 @@ var spotify = new Spotify(keys.spotify)
 // console.log(process.env.SPOTIFY_ID) 
 
 //Takes in argument which will be an action telling liri what to do
-var action = process.argv[2];
+var userInput = process.argv[2];
 // console.log(action);
 //Takes in argument which will be user input
-var input = process.argv.slice(3).join(" ");
+var userQuery = process.argv.slice(3).join(" ");
 // console.log(input);
 
 
