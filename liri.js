@@ -51,7 +51,7 @@ function command (userInput, userQuery){
 }
 command(userInput, userQuery);
 
-
+// --------------------- CODE - NOT WORKING-----------------------------///
 
 // function concertThis() {
 //     console.log(`\n------\n\nSearching for..."${userQuery}" next show...`);
@@ -83,6 +83,49 @@ command(userInput, userQuery);
 //             }; 
 //         };
 //     };
+
+// =========================================///////////////
+
+
+// --------------------- CODE - NOT WORKING-----------------------------///
+
+function concertThis(userQuery) {
+  
+    // USER REQUEST AS QUERY URL BY USING userQuery VARIABLE PARAMETER FOR OUR SEARCH
+    request("https://rest.bandsintown.com/artists/" + userQuery + "/events?app_id=codingbootcamp", function(error) {
+        
+        if (error) {
+            // PRINT ERROR IF ONE OCCURRED
+            console.log(`Error:`, error);
+             // PRINT THE RESPONSE STATUS CODE IS A RESPONSE IS FOUND
+             console.log(`statusCode:`, error && response.statusCode);
+        } else {
+            let commandLine = "Node Command Action: node concert-this " + userQuery;
+            // CONVERTS STRING INTO THE OBJECT AND CAPTURES IT TO THE VARIABLE
+            var arr = JSON.parse(body);
+
+            var divider = "\n--------- That's for you -----------\n\n";
+            var currentTime = "\nTime of Log: " + moment().format(" dddd, MM/DD/YYYY, HH:mm A") + "\n\n";
+            var dataResults = `\nVenue Name: ${arr[0].venue.name}
+                                \nVenue Location: ${arr[0].venue.city},${arr[0].venue.region}, ${arr[0].venue.country}
+                                \nEvent Date: ${moment(arr[0].datetime).format("MM/DD/YYYY")}`
+                            
+            console.log (`----------- ${dataResults} ------------------`);
+        
+
+            let fileName = "log.txt";
+
+            fs.appendFile(fileName , currentTime + commandLine + "\n\n" + dataResults + divider, function(err) {
+                if(err) throw arr;
+                console.log(`Your data was appended to the log.txt file!`);
+
+            });
+        }
+        
+    });
+};
+
+// ==========================================/////////////
 
 
 
