@@ -54,7 +54,7 @@ command(userInput, userQuery);
 
 
 // function concertThis() {
-//     console.log(`\n------\n\nSearching for...${userQuery}'s next show...`);
+//     console.log(`\n------\n\nSearching for..."${userQuery}" next show...`);
 
 //     // USER REQUEST AS QUERY URL BY USING userQuery VARIABLE PARAMETER FOR OUR SEARCH
 //     request("https://rest.bandsintown.com/artists/" + userQuery + "/events?app_id=codingbootcamp"); {
@@ -85,6 +85,7 @@ command(userInput, userQuery);
 //     };
 
 
+
     function spotifyThisSong() {
         console.log(`\n------\n\nSearching for..."${userQuery}"`);
 
@@ -110,10 +111,47 @@ command(userInput, userQuery);
         });
     }
 
-    
-        
-
-    
 
 
-   
+
+
+    function movieThis() {
+        console.log(`\n------\n\nSearching for..."${userQuery}"`);
+
+        // IF userQuery NOT FOUND, PASS VALUE OF "The Sign" by Ace of Base
+        if (!userQuery) {userQuery= `Mr.Nobody`};
+
+        // REQUEST USING OMBD API
+
+        request("http://www.omdbapi.com/?t=" + userQuery + "&y=&plot=short&apikey=trilogy", function(error, data);
+
+        let userMovie = JSON.parse(body);
+
+        // ROTTEN TOMATOES RATING IS NESTED SO IN ORDER ACCESS IT HAVE TO CAPTURE IT'S VALUES IN ARRAY TO CREATE A PATH 
+        let ratingsArr = userMovie.Ratings;
+
+        if (ratingsArr.length > 2){
+        }
+
+        if (!error && response.statusCode === 200) {
+            console.log(`\nThat's for you...\n\n
+                        Title: ${userMovie.Title}\n
+                        Cast: ${userMovie.Actors}\n
+                        Released: ${userMovie.Year}\n
+                        IMDb Rating: ${userMovie.imdbRating}\n
+                        Rotten Tomatoes Rating : ${userMovie.Ratings[1].Value}\n
+                        Country: ${userMovie.Country}\n
+                        Language: ${userMovie.Language}\n
+                        Plot: ${userMovie.Plot}\n
+                        \n\n----------------`)
+
+        } else{
+            return console.log(`Movie search Error occurred:`+ error)
+        };
+    };
+
+ 
+
+
+
+
