@@ -115,43 +115,61 @@ command(userInput, userQuery);
 
 
 
-    function movieThis() {
-        console.log(`\n------\n\nSearching for..."${userQuery}"`);
+    // function movieThis() {
+    //     console.log(`\n------\n\nSearching for..."${userQuery}"`);
 
-        // IF userQuery NOT FOUND, PASS VALUE OF "The Sign" by Ace of Base
-        if (!userQuery) {userQuery= `Mr.Nobody`};
+    //     // IF userQuery NOT FOUND, PASS VALUE OF "The Sign" by Ace of Base
+    //     if (!userQuery) {userQuery= `Mr.Nobody`};
 
-        // REQUEST USING OMBD API
+    //     // REQUEST USING OMBD API
 
-        request("http://www.omdbapi.com/?t=" + userQuery + "&y=&plot=short&apikey=trilogy", function(error, data);
+    //     request("http://www.omdbapi.com/?t=" + userQuery + "&y=&plot=short&apikey=trilogy", function(error, data);
 
-        let userMovie = JSON.parse(body);
+    //     let userMovie = JSON.parse(body);
 
-        // ROTTEN TOMATOES RATING IS NESTED SO IN ORDER ACCESS IT HAVE TO CAPTURE IT'S VALUES IN ARRAY TO CREATE A PATH 
-        let ratingsArr = userMovie.Ratings;
+    //     // ROTTEN TOMATOES RATING IS NESTED SO IN ORDER ACCESS IT HAVE TO CAPTURE IT'S VALUES IN ARRAY TO CREATE A PATH 
+    //     let ratingsArr = userMovie.Ratings;
+    //     if (ratingsArr.length > 2){
+    //     }
 
-        if (ratingsArr.length > 2){
-        }
+    //     if (!error && response.statusCode === 200) {
+    //         console.log(`\nThat's for you...\n\n
+    //                     Title: ${userMovie.Title}\n
+    //                     Cast: ${userMovie.Actors}\n
+    //                     Released: ${userMovie.Year}\n
+    //                     IMDb Rating: ${userMovie.imdbRating}\n
+    //                     Rotten Tomatoes Rating : ${userMovie.Ratings[1].Value}\n
+    //                     Country: ${userMovie.Country}\n
+    //                     Language: ${userMovie.Language}\n
+    //                     Plot: ${userMovie.Plot}\n
+    //                     \n\n----------------`)
 
-        if (!error && response.statusCode === 200) {
-            console.log(`\nThat's for you...\n\n
-                        Title: ${userMovie.Title}\n
-                        Cast: ${userMovie.Actors}\n
-                        Released: ${userMovie.Year}\n
-                        IMDb Rating: ${userMovie.imdbRating}\n
-                        Rotten Tomatoes Rating : ${userMovie.Ratings[1].Value}\n
-                        Country: ${userMovie.Country}\n
-                        Language: ${userMovie.Language}\n
-                        Plot: ${userMovie.Plot}\n
-                        \n\n----------------`)
-
-        } else{
-            return console.log(`Movie search Error occurred:`+ error)
-        };
-    };
+    //     } else{
+    //         return console.log(`Movie search Error occurred:`+ error)
+    //     };
+    // };
 
  
+    function doWhatItSays(){
+        // UTILIZE IN BUILD IN FUNCTION readFile METHOD TO ACCESS random.tex content
+        fs.readFile('random.txt', "utf8", function(error, data){
+            if (error){
+                return console.log(error);
+            }
+            //SPLIT IT BY COMMAS (TO AMKE IT MORE READABLE)
+            var dataArr = data.split(",");
+            console.log(dataArr);
 
+            var userInput = dataArr[0];
+            var userQuery = dataArr[1];  
+
+            // CALL THE FUNCTION WITH NEW PARAMETERS
+            command(userInput, userQuery);
+        });
+    };
+    
+
+         
 
 
 
