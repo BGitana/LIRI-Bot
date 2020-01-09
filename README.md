@@ -32,6 +32,7 @@ Shows the following upcoming venue information in terminal/bash.
  * Venue location.
  * Date of the Event. 
  * Logs / prints the Name of the Artist/Band in log.tex file.
+
   
 
 **2.**:arrow_right: `node liri.js spotify-this-song <song name>`
@@ -43,6 +44,8 @@ Shows the following information about the song in terminal/bash.
 * A preview link of the song from Spotify
 * The album that the song is from
 * Or if no song is passed through, it will default to "The Sign" by Ace of Base.
+
+
 
 **3.**:arrow_right:`node liri.js movie-this <movie name>`
 
@@ -60,9 +63,12 @@ Shows the following movie information in terminal/bash.
 * Or if no movie is passed through, it will default to "Mr. Nobody"
 * Logs / prints the Name of the movie in log.tex file
 
+
+
 **4.**:arrow_right:`node liri.js do-what-it-says`
 
 Takes the text from random.txt file and runs the song through spotify-this-song command
+
 
 
 ### Tech used
