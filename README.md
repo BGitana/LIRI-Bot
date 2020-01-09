@@ -14,7 +14,7 @@ LIRI is an interpretation and recognition interface app. It is a command line no
 
 	* `do-what-it-says`
 
-## Getting Started
+### Getting Started
 
 - Clone down repo.
 - You will need to replace the values of SPOTIFY_ID and SPOTIFY_SECRET with your API keys (no quotes) to run this app successfully.
@@ -22,9 +22,9 @@ LIRI is an interpretation and recognition interface app. It is a command line no
 - Run command 'node liri.js' or one of the commands below. 
 
 
-## What Each Command Does
+### What Each Command Does
 
-##### 1.:arrow_right:`node liri.js concert-this <artist/band name here>`
+**1.**:arrow_right:`node liri.js concert-this <artist/band name here>`
 
 Shows the following upcoming venue information in terminal/bash.
 
@@ -34,7 +34,7 @@ Shows the following upcoming venue information in terminal/bash.
  * Logs / prints the Name of the Artist/Band in log.tex file.
   
 
-##### 2. :arrow_down: `node liri.js spotify-this-song <song name>`
+**2.**:arrow_right: `node liri.js spotify-this-song <song name>`
 
 Shows the following information about the song in terminal/bash.
 
@@ -44,7 +44,7 @@ Shows the following information about the song in terminal/bash.
 * The album that the song is from
 * Or if no song is passed through, it will default to "The Sign" by Ace of Base.
 
-##### 3.:arrow_right:`node liri.js movie-this <movie name>`
+**3.**:arrow_right:`node liri.js movie-this <movie name>`
 
 Shows the following movie information in terminal/bash.
 
@@ -60,11 +60,11 @@ Shows the following movie information in terminal/bash.
 * Or if no movie is passed through, it will default to "Mr. Nobody"
 * Logs / prints the Name of the movie in log.tex file
 
-##### 4.:arrow_right:`node liri.js do-what-it-says`
+**4.**:arrow_right:`node liri.js do-what-it-says`
 Takes the text from random.txt file and runs the song through spotify-this-song command
 
 
-## Tech used
+### Tech used
 
 * Node.js NPM Package 
 * Spotify NPM Package - https://www.npmjs.com/package/spotify
@@ -74,10 +74,10 @@ Takes the text from random.txt file and runs the song through spotify-this-song 
 * OMDB API - http://www.omdbapi.com
 * Bands In Town API - http://www.artists.bandsintown.com/bandsintown-api
 
-## Prerequisites
+### Prerequisites
 - Node.js - Download the latest version of Node https://nodejs.org/en/
 
-## Built With
+### Built With
 Visual Studio Code - Text Editor
 
 
