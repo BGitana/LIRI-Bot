@@ -24,7 +24,7 @@ LIRI is an interpretation and recognition interface app. It is a command line no
 
 ### What Each Command Does
 
-**1.**:arrow_right:`node liri.js concert-this <artist/band name here>`
+**1.** :arrow_right:`node liri.js concert-this <artist/band name here>`
 
 Shows the following upcoming venue information in terminal/bash.
 
@@ -35,7 +35,7 @@ Shows the following upcoming venue information in terminal/bash.
 
   
 
-**2.**:arrow_right: `node liri.js spotify-this-song <song name>`
+**2.** :arrow_right: `node liri.js spotify-this-song <song name>`
 
 Shows the following information about the song in terminal/bash.
 
@@ -47,7 +47,7 @@ Shows the following information about the song in terminal/bash.
 
 
 
-**3.**:arrow_right:`node liri.js movie-this <movie name>`
+**3.** :arrow_right:`node liri.js movie-this <movie name>`
 
 Shows the following movie information in terminal/bash.
 
@@ -65,7 +65,7 @@ Shows the following movie information in terminal/bash.
 
 
 
-**4.**:arrow_right:`node liri.js do-what-it-says`
+**4.** :arrow_right:`node liri.js do-what-it-says`
 
 Takes the text from random.txt file and runs the song through spotify-this-song command
 
