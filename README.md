@@ -85,6 +85,6 @@ Takes the text from random.txt file and runs the song "I Want it That Way" throu
 - Node.js - Download the latest version of Node https://nodejs.org/en/
 
 ### Built With
-Visual Studio Code - Text Editor
+- Visual Studio Code - Text Editor
 
 
