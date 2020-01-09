@@ -31,7 +31,6 @@ Shows the following upcoming venue information in terminal/bash.
  * Name of the venue.
  * Venue location.
  * Date of the Event. 
- /&
  * Logs / prints the Name of the Artist/Band in log.tex file.
   
 
@@ -59,7 +58,6 @@ Shows the following movie information in terminal/bash.
 * Rotten Tomatoes Rating.
 * Rotten Tomatoes URL.
 * Or if no movie is passed through, it will default to "Mr. Nobody"
-and 
 * Logs / prints the Name of the movie in log.tex file
 
 4. `node liri.js do-what-it-says`
