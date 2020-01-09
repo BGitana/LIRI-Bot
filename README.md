@@ -67,7 +67,7 @@ Shows the following movie information in terminal/bash.
 
 **4.** :arrow_right:`node liri.js do-what-it-says`
 
-Takes the text from random.txt file and runs the song through spotify-this-song command
+Takes the text from random.txt file and runs the song "I Want it That Way" through spotify-this-song command
 
 
 
