@@ -16,39 +16,6 @@ Name of the Artist: Taylor Swift
 Name of the Artist: Maroon 5
 
 
------ Begin Concert Log Entry --------
-
-
-Name of the Artist: Maroon 5
-
------ Begin Concert Log Entry --------
-
-Name of the Artist: Maroon 5
-
------ Begin Movie Log Entry --------
-
-Movie Title: Mr. Nobody
-
-
------ Begin Movie Log Entry --------
-
-Movie Title: Mr. Nobody
-
-
------ Begin Movie Log Entry --------
-
-Movie Title: Mr. Nobody
-
-
------ Begin Movie Log Entry --------
-
-Movie Title: Mr. Nobody
-
-
------ Begin Movie Log Entry --------
-
-Movie Title: Mr. Nobody
-
 
 ----- Begin Movie Log Entry --------
 
@@ -58,4 +25,6 @@ Movie Title: Little Women
 ----- Begin Movie Log Entry --------
 
 Movie Title: Mr. Nobody
+
+
 
