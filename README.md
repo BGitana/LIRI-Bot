@@ -14,10 +14,11 @@ LIRI is an interpretation and recognition interface app. It is a command line no
 
 	* `do-what-it-says`
 
-### Getting Started
+### Prerequisites
 
 - Clone down repo.
 - You will need to replace the values of SPOTIFY_ID and SPOTIFY_SECRET with your API keys (no quotes) to run this app successfully.
+- Node.js - Download the latest version of Node https://nodejs.org/en/
 - Run command 'npm install' in Terminal or GitBash.
 - Run command 'node liri.js' or one of the commands below. 
 
@@ -80,9 +81,6 @@ Takes the text from random.txt file and runs the song "I Want it That Way" throu
 * Moment NPM Package - https://www.npmjs.com/package/moment
 * OMDB API - http://www.omdbapi.com
 * Bands In Town API - http://www.artists.bandsintown.com/bandsintown-api
-
-### Prerequisites
-- Node.js - Download the latest version of Node https://nodejs.org/en/
 
 ### Built With
 - Visual Studio Code - Text Editor
