@@ -40,7 +40,8 @@ function command(userInput, userQuery) {
 }
 command(userInput, userQuery);
 
-// ---------------- CODE-(concertThis) - IS WORKING---------------------/
+// ---------------- CODE-(concertThis) - IS WORKING--------------------/
+
 function concertThis(artist) {
   var artist = userQuery;
 
@@ -158,13 +159,14 @@ function movieThis(movie) {
 }
 
 // ------------ CODE - (doWhatItSays) - IS WORKING-----------------------///
+
 function doWhatItSays() {
   // UTILIZE IN BUILD IN FUNCTION readFile METHOD TO ACCESS random.tex content
   fs.readFile("random.txt", "utf8", function(error, data) {
     if (error) {
       return console.log(error);
     }
-    //SPLIT IT BY COMMAS (TO AMKE IT MORE READABLE)
+    //SPLIT IT BY COMMAS (TO MAKE IT MORE READABLE)
     var dataArr = data.split(",");
     console.log(dataArr);
 
