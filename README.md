@@ -72,7 +72,7 @@ Takes the text from random.txt file and runs the song "I Want it That Way" throu
 
 
 
-### Tech used
+### Tech Used
 
 * Node.js NPM Package 
 * Spotify NPM Package - https://www.npmjs.com/package/spotify
