@@ -4,22 +4,14 @@ var axios = require("axios");
 var moment = require("moment")
 var fs = require('fs');
 var keys = require("./keys.js")
-
-// var spotify = new Spotify({
-//     id: process.env.SPOTIFY_ID,
-//     secret: process.env.SPOTIFY_SECRET
-// });
 var spotify = new Spotify(keys.spotify)
-
 // console.log(process.env.SPOTIFY_ID) 
 
 //Takes in argument which will be an action telling liri what to do
 var userInput = process.argv[2];
-// console.log(action);
 // console.log(userInput);
 //Takes in argument which will be user input
 var userQuery = process.argv.slice(3).join(" ");
-// console.log(input);
 // console.log(userQuery);
 
 
@@ -73,13 +65,13 @@ axios.get(bandQueryUrl).then(
       console.log("Event Date: " + moment(response.data[0].datetime).format("MM/DD/YYYY") + "\r\n"); 
       
       let fileName = "log.txt";
-      var logConcert = "\n----- Begin Concert Log Entry --------\n\n" + "\nName of the Artist: " + artist +  "\n\n";
+      var logConcert = "\n----- Begin Concert Log Entry --------\n" + "\nName of the Artist: " + artist +  "\n\n";
 
     //   ADD LOG - NAME OF THE ARTIST TO log.txt FILE
             fs.appendFile("log.txt", logConcert, function(err) {
                 if(err) throw arr;     
        });
-       console.log(`Your data was appended to the log.txt file!`);
+       console.log(`Your ARTIST data was appended to the log.txt file!`);
     });
 };
 
@@ -113,43 +105,52 @@ axios.get(bandQueryUrl).then(
 
 
 
-// --------------------- CODE - NOT WORKING-----------------------------///
+// ----------------- CODE-(movieThis) - IS WORKING---------------------///
 
-    // function movieThis() {
-    //     console.log(`\n------\n\nSearching for..."${userQuery}"`);
+    function movieThis(movie) {
+        var movie = userQuery;
+        // console.log("Movie: "+ movie);
+        //  IF ENTRY IS NOT CORRECT THE PROGRAM WILL OUTPUT DATA FOR THE MOVIE Mr.Nobody
+        if (!movie) {
+            movie = `Mr. Nobody`;
+        }
+        // REQUEST USING OMBD API
+        var movieQueryUrl = "http://www.omdbapi.com/?t=" + movie + "&y=&plot=short&apikey=trilogy";
+        // This line is just to help us debug against the actual URL.
+        // console.log(movieQueryUrl);
 
-    //     // IF userQuery NOT FOUND, PASS VALUE OF "The Sign" by Ace of Base
-    //     if (!userQuery) {userQuery= `Mr.Nobody`};
 
-    //     // REQUEST USING OMBD API
+        // USER REQUEST AS QUERY URL BY USING userQuery VARIABLE PARAMETER FOR OUR SEARCH
+        axios.request(movieQueryUrl).then(
+        function(response) {
+            console.log("\n--------- That's for you -----------\n\n");
+            // console.log(response.data);
+            console.log("* Title: " + response.data.Title + "\r\n");
+            console.log("* Released: " + response.data.Year + "\r\n");
+            console.log("* IMDB Rating: " + response.data.imdbRating + "\r\n");
+            console.log("* Rotten Tomatoes Rating: " + response.data.Ratings[1].Value + "\r\n");
+            console.log("* Country: " + response.data.Country + "\r\n");
+            console.log("* Language: " + response.data.Language + "\r\n");
+            console.log("* Plot: " + response.data.Plot + "\r\n");
+            console.log("* Actors: " + response.data.Actors + "\r\n");
 
-    //     request("http://www.omdbapi.com/?t=" + userQuery + "&y=&plot=short&apikey=trilogy", function(error, data);
+            // LOG RESULTS (response);
+            let fileName = "log.txt";
+            var logMovie = "\n----- Begin Movie Log Entry --------\n" + "\nMovie Title: " + response.data.Title +  "\n\n";
+      
+          //   ADD LOG - NAME OF THE MOVIE TO log.txt FILE
+                  fs.appendFile("log.txt", logMovie, function(err) {
+                      if(err) throw arr;     
+             });
+             console.log(`Your MOVIE data was appended to the log.txt file!`);
+        
+         });
+    };
 
-    //     let userMovie = JSON.parse(body);
 
-    //     // ROTTEN TOMATOES RATING IS NESTED SO IN ORDER ACCESS IT HAVE TO CAPTURE IT'S VALUES IN ARRAY TO CREATE A PATH 
-    //     let ratingsArr = userMovie.Ratings;
-    //     if (ratingsArr.length > 2){
-    //     }
 
-    //     if (!error && response.statusCode === 200) {
-    //         console.log(`\nThat's for you...\n\n
-    //                     Title: ${userMovie.Title}\n
-    //                     Cast: ${userMovie.Actors}\n
-    //                     Released: ${userMovie.Year}\n
-    //                     IMDb Rating: ${userMovie.imdbRating}\n
-    //                     Rotten Tomatoes Rating : ${userMovie.Ratings[1].Value}\n
-    //                     Country: ${userMovie.Country}\n
-    //                     Language: ${userMovie.Language}\n
-    //                     Plot: ${userMovie.Plot}\n
-    //                     \n\n----------------`)
 
-    //     } else{
-    //         return console.log(`Movie search Error occurred:`+ error)
-    //     };
-    // };
-
- // --------------------- CODE - (doWhatItSays) - IS WORKING-----------------------------///
+ // ------------ CODE - (doWhatItSays) - IS WORKING-----------------------///
     function doWhatItSays(){
         // UTILIZE IN BUILD IN FUNCTION readFile METHOD TO ACCESS random.tex content
         fs.readFile('random.txt', "utf8", function(error, data){
