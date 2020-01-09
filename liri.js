@@ -51,83 +51,40 @@ function command (userInput, userQuery){
 }
 command(userInput, userQuery);
 
-// --------------------- CODE - NOT WORKING-----------------------------///
 
-// function concertThis() {
-//     console.log(`\n------\n\nSearching for..."${userQuery}" next show...`);
+// ---------------- CODE-(concertThis) - IS WORKING---------------------/
+function concertThis(artist) {
+    var artist = userQuery;
 
-//     // USER REQUEST AS QUERY URL BY USING userQuery VARIABLE PARAMETER FOR OUR SEARCH
-//     request("https://rest.bandsintown.com/artists/" + userQuery + "/events?app_id=codingbootcamp"); {
-//         // IF THERE IS NO ERROR GIVE A 200 STATUS CODE (everything OK!)
-//         if (!error && response.statusCode === 200) {
-//             // CAPTURE DATA AND USE IT IN JSON FORMAT
-//             let userBand = JSON.parse(body);
-//             // USE FOR LOOP TO ACCESS PATH TO NEEDED DATA
-//             if(userBand.length > 0) { 
-//                 for ( i = 0; i < 1; i ++) {
-//                     // CONSOLE LOG NEEDED DATA
-//                     console.log(`\nThat's for you...\n\n
-//                     Artist: ${userBand[i].lineup[0]}\n
-//                     Venue: ${userBand[i].venue.name}\n
-//                     Venue Location: ${userBand[i].venue.latitude},${userBand[i].venue.longitude}\n
-//                     Venue City/Country: ${userBand[i].venue.city},${userBand[i].venue.country}`)
+    // Then run a request with axios to the Bands In Town API with the artist name or band name specified
+var bandQueryUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 
-//                     // MOMENT.JS TO FORMAT THE DATE MM/DD/YYYY
-//                     let concertDate = moment(userBand[i].datetime).format("MM/DD/YYYY hh:00 A");  
-
-//                     console.log(`Date and Time: ${concertDate}\n\n--------`);
-//                     };
-//                 } else {
-//                     console.log(`Band or concert not found!`);
-//                 };
-//             }; 
-//         };
-//     };
-
-// =========================================///////////////
+// This line is just to help us debug against the actual URL.
+console.log(bandQueryUrl);
 
 
-// --------------------- CODE - NOT WORKING-----------------------------///
+// USER REQUEST AS QUERY URL BY USING userQuery VARIABLE PARAMETER FOR OUR SEARCH
+axios.get(bandQueryUrl).then(
+    function(response) {
+      console.log("\n--------- That's for you -----------\n\n");
+    //   console.log(response);
+      console.log("Venue Name: " + response.data[0].venue.name + "\r\n");
+      console.log("Venue Location: " + response.data[0].venue.city + "\r\n");
+      console.log("Event Date: " + moment(response.data[0].datetime).format("MM/DD/YYYY") + "\r\n"); 
+      
+      let fileName = "log.txt";
+      var logConcert = "\n----- Begin Concert Log Entry --------\n\n" + "\nName of the Artist: " + artist +  "\n\n";
 
-function concertThis(userQuery) {
-  
-    // USER REQUEST AS QUERY URL BY USING userQuery VARIABLE PARAMETER FOR OUR SEARCH
-    request("https://rest.bandsintown.com/artists/" + userQuery + "/events?app_id=codingbootcamp", function(error) {
-        
-        if (error) {
-            // PRINT ERROR IF ONE OCCURRED
-            console.log(`Error:`, error);
-             // PRINT THE RESPONSE STATUS CODE IS A RESPONSE IS FOUND
-             console.log(`statusCode:`, error && response.statusCode);
-        } else {
-            let commandLine = "Node Command Action: node concert-this " + userQuery;
-            // CONVERTS STRING INTO THE OBJECT AND CAPTURES IT TO THE VARIABLE
-            var arr = JSON.parse(body);
-
-            var divider = "\n--------- That's for you -----------\n\n";
-            var currentTime = "\nTime of Log: " + moment().format(" dddd, MM/DD/YYYY, HH:mm A") + "\n\n";
-            var dataResults = `\nVenue Name: ${arr[0].venue.name}
-                                \nVenue Location: ${arr[0].venue.city},${arr[0].venue.region}, ${arr[0].venue.country}
-                                \nEvent Date: ${moment(arr[0].datetime).format("MM/DD/YYYY")}`
-                            
-            console.log (`----------- ${dataResults} ------------------`);
-        
-
-            let fileName = "log.txt";
-
-            fs.appendFile(fileName , currentTime + commandLine + "\n\n" + dataResults + divider, function(err) {
-                if(err) throw arr;
-                console.log(`Your data was appended to the log.txt file!`);
-
-            });
-        }
-        
+    //   ADD LOG - NAME OF THE ARTIST TO log.txt FILE
+            fs.appendFile("log.txt", logConcert, function(err) {
+                if(err) throw arr;     
+       });
+       console.log(`Your data was appended to the log.txt file!`);
     });
 };
 
-// ==========================================/////////////
 
-
+// ----------CODE - (spotifyThisSong) - IS WORKING-----------------///
 
     function spotifyThisSong() {
         console.log(`\n------\n\nSearching for..."${userQuery}"`);
@@ -156,7 +113,7 @@ function concertThis(userQuery) {
 
 
 
-
+// --------------------- CODE - NOT WORKING-----------------------------///
 
     // function movieThis() {
     //     console.log(`\n------\n\nSearching for..."${userQuery}"`);
@@ -192,7 +149,7 @@ function concertThis(userQuery) {
     //     };
     // };
 
- 
+ // --------------------- CODE - (doWhatItSays) - IS WORKING-----------------------------///
     function doWhatItSays(){
         // UTILIZE IN BUILD IN FUNCTION readFile METHOD TO ACCESS random.tex content
         fs.readFile('random.txt', "utf8", function(error, data){
