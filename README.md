@@ -1,4 +1,4 @@
-# LIRI-Bot-app :eye_speech_bubble:
+# LIRI-Bot-app *:eye_speech_bubble:*
 
 ### Overview
 
@@ -61,6 +61,7 @@ Shows the following movie information in terminal/bash.
 * Logs / prints the Name of the movie in log.tex file
 
 **4.**:arrow_right:`node liri.js do-what-it-says`
+
 Takes the text from random.txt file and runs the song through spotify-this-song command
 
 
