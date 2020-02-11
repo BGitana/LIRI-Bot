@@ -28,3 +28,78 @@ Movie Title: Mr. Nobody
 
 
 
+
+----- Begin Concert Log Entry --------
+
+Name of the Artist: madona
+
+
+----- Begin Movie Log Entry --------
+
+Movie Title: Fight Club
+
+
+----- Begin Movie Log Entry --------
+
+Movie Title: Parasite
+
+
+----- Begin Movie Log Entry --------
+
+Movie Title: Joker
+
+
+----- Begin Movie Log Entry --------
+
+Movie Title: Mr. Nobody
+
+
+----- Begin Concert Log Entry --------
+
+Name of the Artist: madonna
+
+
+----- Begin Concert Log Entry --------
+
+Name of the Artist: madonna
+
+
+----- Begin Concert Log Entry --------
+
+Name of the Artist: madonna
+
+
+----- Begin Concert Log Entry --------
+
+Name of the Artist: madonna
+
+
+----- Begin Concert Log Entry --------
+
+Name of the Artist: madonna
+
+
+----- Begin Movie Log Entry --------
+
+Movie Title: Joker
+
+
+----- Begin Movie Log Entry --------
+
+Movie Title: Mr. Nobody
+
+
+----- Begin Movie Log Entry --------
+
+Movie Title: Joker
+
+
+----- Begin Movie Log Entry --------
+
+Movie Title: Joker
+
+
+----- Begin Movie Log Entry --------
+
+Movie Title: Mr. Nobody
+

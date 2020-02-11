@@ -34,7 +34,7 @@ Shows the following upcoming venue information in terminal/bash.
  * Date of the Event. 
  * Logs / prints the Name of the Artist/Band in log.tex file.
 
-  
+  ![concert](assets/artist-demo..gif)
 
 **2.** :arrow_right: `node liri.js spotify-this-song <song name>`
 
@@ -46,6 +46,7 @@ Shows the following information about the song in terminal/bash.
 * The album that the song is from
 * Or if no song is passed through, it will default to "The Sign" by Ace of Base.
 
+ ![song](assets/song-demo.gif)
 
 
 **3.** :arrow_right:`node liri.js movie-this <movie name>`
@@ -64,13 +65,15 @@ Shows the following movie information in terminal/bash.
 * Or if no movie is passed through, it will default to "Mr. Nobody"
 * Logs / prints the Name of the movie in log.tex file
 
+ ![movie](assets/movie-demo.gif)
+![nomovie](assets/no-movie.gif)
 
 
 **4.** :arrow_right:`node liri.js do-what-it-says`
 
 Takes the text from random.txt file and runs the song "I Want it That Way" through spotify-this-song command
 
-
+![dowhatsays](assets/do_what_says.gif)
 
 ### Tech Used
 
